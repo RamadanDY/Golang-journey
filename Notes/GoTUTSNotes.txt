@@ -1,0 +1,36 @@
+package main
+
+// Go code is always organized into packages.
+
+// If you write package main, you are telling the compiler:
+
+// “This is not just a library — this package should build into an executable program.”
+
+// this is just to import the print package
+
+// A collection of Go source files in the same directory that share the same package declaration.
+
+// Example: fmt, math, strings.
+import "fmt"
+
+// this basically says this is our main file that the project should run from
+// In Go, the program always starts execution from the main function inside the main package.
+// It’s like saying: “When you run the compiled program, this is the first function that runs.”
+// Without a main() function in the main package, you cannot build and run a standalone Go program — it won’t know where to start.
+
+func main() {
+	fmt.Println("hello")
+
+}
+
+
+
+Line 1: In Go, every program is part of a package. We define this using the package keyword. In this example, the program belongs to the main package.
+
+Line 2: import ("fmt") lets us import files included in the fmt package.
+
+Line 3: A blank line. Go ignores white space. Having white spaces in code makes it more readable.
+
+Line 4: func main() {} is a function. Any code inside its curly brackets {} will be executed.
+
+Line 5: fmt.Println() is a function made available from the fmt package. It is used to output/print text. In our example it will output "Hello World!"

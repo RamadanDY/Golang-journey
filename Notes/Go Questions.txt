@@ -1,0 +1,11 @@
+❓ Question
+
+Write a Go program that:
+
+Defines a function called concat that takes two strings as input parameters and returns their concatenation (joined together).
+
+In the main function, call another helper function named test three times with different string arguments.
+
+The test function should take two strings, call concat with them, and print the result.
+
+Expected output when the program runs:
