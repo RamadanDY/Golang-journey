@@ -11,7 +11,6 @@
 // 	fmt.Println(mylast)
 
 // }
-
 package main
 
 import (
@@ -20,17 +19,24 @@ import (
 
 func main() {
 	var shortGolang = "Watch Go crash course"
-	var fullGolang = "Watch nana's Glang full Course"
+	var fullGolang = "Watch nana's Golang full Course"
 	var rewardDessert = "reward myself with a donut"
 
+	// Slice of strings
 	var taskItem = []string{shortGolang, fullGolang, rewardDessert}
 
-	fmt.Println("he")
+	fmt.Println("Here is an example slice of integers:")
+
+	// Slice of integers
 	mySlice := []int{1, 2, 3, 4, 5, 65, 3}
 	fmt.Println(mySlice)
 
-	fmt.Println(taskItem)
 	fmt.Println("Tasks")
+
+	// Loop through taskItem
+	for index, task := range taskItem {
+		fmt.Println(index+1, ":", task)
+	}
 }
 
 /*
