@@ -1,0 +1,18 @@
+//variables in GO
+
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("hello world ")
+
+	var name string = " RAmadana"
+	const firstName string = "Yakubu"
+	// this := inverts the type
+	lastName := "Kofi"
+
+	fmt.Println(name)
+	fmt.Println(firstName)
+	fmt.Println(lastName)
+}

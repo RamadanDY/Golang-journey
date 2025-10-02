@@ -1,0 +1,38 @@
+Go is a cross-platform, open source programming language
+Go can be used to create high-performance applications
+Go is a fast, statically typed, compiled language known for its simplicity and efficiency
+
+
+What is Go Used For?
+
+    Web development (server-side)
+    Developing network-based programs
+    Developing cross-platform enterprise applications
+    Cloud-native development
+    requires fewer resourse to run ie cpu and ram
+
+
+Why Use Go?
+
+    Go is fun and easy to learn
+    Go has fast run time .and compilation time
+        >>>Run time refers to how quickly a Go program executes when it’s running. 
+        >>>Go is a compiled language, meaning it’s translated directly into machine code (binary) that the computer’s processor can execute efficiently.
+        >>> This results in fast program execution compared to interpreted languages like Python or JavaScript, which rely on interpreters or virtual machines.
+    Go has  compilation time.
+        >>>Compilation time refers to how long it takes for the Go compiler (gc) to convert your source code into an executable binary. 
+        >>>Go’s compiler is designed to be extremely fast, often compiling large projects in milliseconds or seconds.
+    Go supports concurrency
+        >>>Concurrency is the ability of a program to handle multiple tasks at the same time ie in parralel, such as processing multiple user requests or performing parallel computations.
+    Go has memory management
+        >>>Go has automatic garbage collection (GC), meaning the runtime automatically reclaims memory that’s no longer in use, freeing developers from manual memory management (like in C/C++ with malloc/free).
+    Go works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc.)
+    Multi threading refers to   where multiple threads runnning multiple threads simultanously 
+    with go we use go routine for concurency 
+
+
+    that is why go was created ie to prevemt concurency issues 
+     it was created to run on multiple cores and built to support  concurency
+
+mainly used for apps that need to be verry performant and aslo apps that will be run on the cloud service ie on multiple servers 
+more technologies that are run on the cloud are written in go 
