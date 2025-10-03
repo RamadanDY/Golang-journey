@@ -32,11 +32,16 @@ func main() {
 	fmt.Println(mySlice)
 
 	fmt.Println("Tasks")
-
-	// Loop through taskItem
-	for index, task := range taskItem {
-		fmt.Println(index+1, ":", task)
+	// this is also the traditional way of looping throug an array
+	for icc := 0; icc < len(taskItem); icc++ {
+		fmt.Println(icc, ":", taskItem[icc])
 	}
+
+	// Loop through taskItem with the for range tyoe of looping through an array
+	for index, value := range taskItem {
+		fmt.Println(index+1, ":", value)
+	}
+	// note that the index+1 is to make the array start counting from 1 not 0
 }
 
 /*

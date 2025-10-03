@@ -24,3 +24,38 @@ arrayName :=[] int{1,2,3,4,5,6}
 for index, value := range arrayName {
     // use index and value here
 }
+
+examples
+
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var shortGolang = "Watch Go crash course"
+	var fullGolang = "Watch nana's Golang full Course"
+	var rewardDessert = "reward myself with a donut"
+
+	// Slice of strings
+	var taskItem = []string{shortGolang, fullGolang, rewardDessert}
+
+	fmt.Println("Here is an example slice of integers:")
+
+	// Slice of integers
+	mySlice := []int{1, 2, 3, 4, 5, 65, 3}
+	fmt.Println(mySlice)
+
+	fmt.Println("Tasks")
+	// this is also the traditional way of looping throug an array
+	for icc := 0; icc < len(taskItem); icc++ {
+		fmt.Println(icc, ":", taskItem[icc])
+	}
+
+	// Loop through taskItem with the for range tyoe of looping through an array
+	for index, task := range taskItem {
+		fmt.Println(index+1, ":", task)
+	}
+	// note that the index+1 is to make the array start counting from 1 not 0
+}
