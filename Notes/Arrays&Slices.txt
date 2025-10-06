@@ -120,3 +120,45 @@ fmt.Println(arr)   // [10 99 30 40 50]
 ---
 
 👉 Do you want me to also show you **how slices manage their capacity under the hood** (like when you `append` beyond the capacity)? That’s an important “gotcha” for Go devs.
+
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("hello")
+	// slice
+	myslice := [10]int{1, 2, 3, 4, 5, 6, 7}
+	// this is  to show the capacity  of the slice or the array
+	fmt.Println(cap(myslice))
+}
+
+
+///////////////lets append a slice 
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("hello")
+	// slice
+	myslice := []int{1, 2, 3, 4, 5, 6, 7}
+	// this is  to show the capacity  of the slice or the array
+	fmt.Println(cap(myslice))
+	name := append(myslice, 2)
+	fmt.Println(name)
+}
+
+
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("hello")
+	// slice ie cahnging the value of the index 
+	myslice := [10]int{1, 2, 3, 4, 5, 6, 7}
+	// this is  to show the capacity  of the slice or the array
+	myslice[2] = 26
+	fmt.Println(myslice)
+}
