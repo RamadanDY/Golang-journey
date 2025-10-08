@@ -4,7 +4,7 @@ package main
 import "fmt"
 
 func main() {
-	saka(1, 2, 3, "kdd")
+	saka(1, 2, 3, "kdd", "letsg seee")
 }
 
 func saka(a, b, c int, k string) {
