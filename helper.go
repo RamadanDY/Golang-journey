@@ -4,7 +4,7 @@ package main
 import "fmt"
 
 func main() {
-	saka(1, 2, 3, "kdd", "letsg anaa last one seee")
+	saka(1, 2, 3, "kdd", "lets anaa last one seee")
 }
 
 func saka(a, b, c int, k string) {
@@ -19,11 +19,12 @@ func concat(s1 string, s2 string) string {
 	return s1 + s2
 }
 
-// func main() {
-// 	test("name", "is ")
-// 	test("rapper", "is ")
-// 	test("shiitttt", "is ")
-// }
+func main() {
+	test("name", "is ")
+	test("rapper", "is ")
+	test("shiitttt", "is ")
+}
+
 // func test(s1 string, s2 string) {
 // 	fmt.Println(concat(s1, s2))
 
