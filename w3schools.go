@@ -24,7 +24,7 @@ func main() {
 	fmt.Scan(&lastName)
 	fmt.Println("Enter your email")
 	fmt.Scan(&email)
-	fmt.Println("enter the number of tickets")
+	fmt.Println("enter the number of yh tickets")
 	fmt.Scan(&userTicket)
 	fmt.Printf("thank u %v %v for booking %v tickets.we will send u a confirmation via this email:%v\n", firstName, lastName, userTicket, email)
 	bookings[0] = firstName + "  " + lastName
