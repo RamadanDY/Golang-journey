@@ -1,6 +1,11 @@
- Great one 👍 — slices and arrays are core to Go, but they’re a little different from what you might expect if you’ve used other languages.
+this is how to save values in arrays and slices
+//Array 
+bookings = [50]string
+booking[0] = "hello"
 
----
+//slices we use the append method
+bookings = []string
+bookings = append(bookings,"hello")
 
 ✅ How to tell them apart
 
@@ -120,7 +125,6 @@ fmt.Println(arr)   // [10 99 30 40 50]
 ---
 
 👉 Do you want me to also show you **how slices manage their capacity under the hood** (like when you `append` beyond the capacity)? That’s an important “gotcha” for Go devs.
-<<<<<<< HEAD
 
 package main
 
@@ -163,5 +167,3 @@ func main() {
 	myslice[2] = 26
 	fmt.Println(myslice)
 }
-=======
->>>>>>> origin/master

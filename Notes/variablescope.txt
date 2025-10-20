@@ -1,0 +1,120 @@
+Variable scope in Go — concise notes with examples
+
+1) Package-level (file/global) scope
+- Declared outside functions. Visible to all files in same package.
+- Exported if name starts with uppercase (accessible from other packages).
+
+Example:
+package main
+
+import "fmt"
+
+var Global = 10   // exported
+var unexported = 5 // package-private
+
+func main() {
+    fmt.Println(Global, unexported)
+}
+
+2) Function (local) scope
+- Variables declared inside a function are visible only within that function or nested blocks.
+- Short declaration := and var both work.
+
+Example:
+func f() {
+    x := 1
+    var y = 2
+    fmt.Println(x, y)
+}
+
+3) Block scope (if/for/switch)
+- Variables declared in a block exist only inside that block.
+- Commonly used in if/for short statements.
+
+Example:
+if v := compute(); v > 0 {
+    fmt.Println("v inside if:", v)
+}
+// v is not visible here
+
+for i := 0; i < 3; i++ {
+    fmt.Println(i)
+}
+// i is not visible here
+
+4) Shadowing
+- An inner declaration can shadow an outer variable with same name. This can be a source of bugs.
+
+Example:
+x := 1
+if true {
+    x := 2 // shadows outer x
+    fmt.Println(x) // prints 2
+}
+fmt.Println(x) // prints 1
+
+5) Closures and captured variables
+- Closures capture variables by reference (the variable, not the value at the time).
+- Beware when capturing loop variables in goroutines.
+
+Loop capture pitfall:
+for i := 0; i < 3; i++ {
+    go func() {
+        fmt.Println(i) // may print 3, 3, 3
+    }()
+}
+
+Fix by passing as parameter or rebind inside loop:
+for i := 0; i < 3; i++ {
+    i := i // rebind creates new i per iteration
+    go func() {
+        fmt.Println(i) // 0,1,2
+    }()
+}
+-- or --
+for i := 0; i < 3; i++ {
+    go func(n int) {
+        fmt.Println(n)
+    }(i)
+}
+
+6) init() and variable initialization order
+- Package vars are initialized in dependency order; init() runs after vars are set.
+- Multiple files: init() order is unspecified across files in same package; rely on simple init only.
+
+Example:
+var a = computeA() // evaluated at package init time
+func init() {
+    // runs after package vars initialization
+}
+
+7) Constants
+- consts follow same scoping rules as vars but are compile-time constants.
+- Block and package-level consts behave like variables regarding visibility.
+
+8) Redeclaration rules
+- You can redeclare with := only if at least one identifier is new in the same scope.
+- var redeclaration in same scope is a compile error.
+
+9) Zero values and addressability
+- Uninitialized variables get zero values (0, "", nil, false).
+- You can take address of a local variable and return it safely (Go handles escape analysis).
+
+Example:
+func makePtr() *int {
+    x := 42
+    return &x // safe: x escapes to heap if needed
+}
+
+10) Practical tips
+- Prefer short declarations for locals, var for package-level or when specifying type.
+- Avoid excessive shadowing; prefer clear names.
+- When launching goroutines inside loops, capture loop variable explicitly.
+- Keep exported package-level state minimal; prefer constructors and methods.
+
+Reference quick checklist:
+- Package-level: visible to package, exported if Uppercase.
+- Function/block: limited to block/function.
+- Short declaration := creates variable in current scope.
+- Shadowing can hide outer vars—watch for subtle bugs.
+- Closures capture variables; bind loop variables to avoid surprises.
