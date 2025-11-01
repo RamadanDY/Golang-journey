@@ -11,10 +11,6 @@
 // 	fmt.Println(mylast)
 
 // }
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 package main
 
 import (
@@ -23,7 +19,6 @@ import (
 
 func main() {
 	var shortGolang = "Watch Go crash course"
-<<<<<<< HEAD
 	var fullGolang = "Watch nana's Golang full Course"
 	var rewardDessert = "reward myself with a donut"
 
@@ -47,19 +42,6 @@ func main() {
 		fmt.Println(index+1, ":", value)
 	}
 	// note that the index+1 is to make the array start counting from 1 not 0
-=======
-	var fullGolang = "Watch nana's Glang full Course"
-	var rewardDessert = "reward myself with a donut"
-
-	var taskItem = []string{shortGolang, fullGolang, rewardDessert}
-
-	fmt.Println("he")
-	mySlice := []int{1, 2, 3, 4, 5, 65, 3}
-	fmt.Println(mySlice)
-
-	fmt.Println(taskItem)
-	fmt.Println("Tasks")
->>>>>>> origin/master
 }
 
 /*

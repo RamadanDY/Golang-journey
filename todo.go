@@ -6,9 +6,10 @@ func main() {
 	var shortGolang = "Watch Go crash course"
 	var fullGolang = "Watch nana's Golang full Course"
 	var rewardDessert = "reward myself with a donut"
+	var what = "what is thr"
 
 	// Slice of strings
-	var taskItem = []string{shortGolang, fullGolang, rewardDessert}
+	var taskItem = []string{shortGolang, fullGolang, rewardDessert, what}
 
 	// we pass the parameter into this call back func in the main func
 	printTasks(taskItem)
