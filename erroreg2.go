@@ -4,9 +4,13 @@ import "fmt"
 
 // reusable error in Go
 
+// global variable
+
+var ErrNegativeInput = fmt.Errorf("imput must be positive ")
+
 func square(x int) (int, error) {
 	if x < 0 {
-		return 0, fmt.Errorf("the int isnt a positive number %v", x)
+		return 0, ErrNegativeInput
 	}
 
 	return x * x, nil
