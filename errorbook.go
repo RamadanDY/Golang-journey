@@ -7,7 +7,7 @@ import (
 
 func calcRemainderAndMod(numerator, denominator int) (int, int, error) {
 	if denominator == 0 {
-		return 0, 0, errors.New("denominator is 0")
+		return 0, 0, errors.New("denominator or cannot br  is 0")
 	}
 	return numerator / denominator, numerator % denominator, nil
 }
