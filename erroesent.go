@@ -27,7 +27,7 @@ func main() {
 			fmt.Println("sorry no bread")
 
 		} else {
-			fmt.Println("smt else went wrong", err)
+			fmt.Println("smt else  ", err)
 		}
 
 	}
