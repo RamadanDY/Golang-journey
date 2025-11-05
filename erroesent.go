@@ -24,7 +24,7 @@ func main() {
 		// we want to check if the err that we get is the same as the sentinel one created above
 
 		if errors.Is(err, ErrNoBread) {
-			fmt.Println("sorry no bread")
+			fmt.Println("d")
 
 		} else {
 			fmt.Println("smt else  ", err)
