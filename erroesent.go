@@ -1,6 +1,9 @@
 package main
 
-import "errors"
+import (
+	"errors"
+	"fmt"
+)
 
 // the sentinal Error
 
@@ -16,9 +19,19 @@ func BreadInStock(stock int) (string, error) {
 }
 
 func main() {
-	result, err := BreadInStock(0)
+	result, err := BreadInStock(10)
 	if err != nil {
+		// we want to check if the err that we get is the same as the sentinel one created above
+
+		if errors.Is(err, ErrNoBread) {
+			fmt.Println("sorry no bread")
+
+		} else {
+			fmt.Println("smt else went wrong", err)
+		}
 
 	}
+
+	fmt.Println(result)
 
 }
