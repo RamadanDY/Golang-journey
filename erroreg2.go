@@ -6,7 +6,7 @@ import "fmt"
 
 // global variable
 
-var ErrNegativeInput = fmt.Errorf("imput must be positive ")
+var ErrNegativeInput = fmt.Errorf("imputpositive ")
 
 func square(x int) (int, error) {
 	if x < 0 {
