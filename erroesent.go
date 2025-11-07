@@ -5,6 +5,35 @@ import (
 	"fmt"
 )
 
+var ErrorBreads = errors.New("there is no bread available")
+
+func createbread(x int) (string, error) {
+	if x == 0 {
+		return "", ErrorBreads
+
+	}
+	return "Here is your bread", nil
+}
+
+func main() {
+	result ,err:= createbread(0){
+		if err != nil {
+			if errors.Is(err,ErrorBreads)
+		}else{
+			fmt.Println("this is a diff error",err)
+		}
+	}
+	fmt.Println(result)
+}
+
+/*
+package main
+
+import (
+	"errors"
+	"fmt"
+)
+
 // the sentinal Error
 
 var ErrNoBread = errors.New("No Bread Left In Stock")
@@ -14,7 +43,7 @@ func BreadInStock(stock int) (string, error) {
 		return "", ErrNoBread
 
 	}
-	return "Here’s your bread!", nil
+	return "Here is your bread!", nil
 
 }
 
@@ -35,3 +64,5 @@ func main() {
 	fmt.Println(result)
 
 }
+
+*/

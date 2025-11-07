@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"fmt"
 )
 
 var (
@@ -37,4 +38,8 @@ func processResource(id string) error {
 	}
 
 	return nil
+}
+
+func main() {
+	fmt.Println("hello wolrd")
 }

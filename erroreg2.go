@@ -16,6 +16,7 @@ func square(x int) (int, error) {
 	return x * x, nil
 
 }
+
 func main() {
 
 	result, err := square(-3)
