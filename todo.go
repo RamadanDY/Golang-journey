@@ -18,6 +18,12 @@ func main(){
 	fmt.Println("these are the list of todo app")
 	fmt.Println(thetask)
 
+	// the for loop in golang to display them
+
+	for index, task := range thetask  {
+		
+	}
+
 
 
 
