@@ -21,7 +21,8 @@ func main(){
 	// the for loop in golang to display them
 
 	for index, task := range thetask  {
-		
+		fmt.Println(index+1,".",task)
+		fmt.Printf()
 	}
 
 
