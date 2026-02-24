@@ -7,3 +7,4 @@ func main() {
 
 	fmt.Printf("hello:%vfff", x)
 }
+
