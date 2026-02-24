@@ -2,28 +2,35 @@
 package main
 
 import "fmt"
+ 
 
 func main() {
-	saka(1, 2, 3, "kdd", "lets anaa last one seee")
+	name := "kofi"
+	age := 23
+	fmt.Printf("this is the,%s,%d",name ,age)
 }
 
-func saka(a, b, c int, k string) {
-	// a = 23
-	// b = 2
-	// c = 1
-	// k = "Ama"
-	fmt.Println(a)
-}
+// func main() {
+// 	saka(1, 2, 3, "kdd", "lets anaa last one seee")
+// }
 
-func concat(s1 string, s2 string) string {
-	return s1 + s2
-}
+// func saka(a, b, c int, k string) {
+// 	// a = 23
+// 	// b = 2
+// 	// c = 1
+// 	// k = "Ama"
+// 	fmt.Println(a)
+// }
 
-func main() {
-	test("name", "is ")
-	test("rapper", "is ")
-	test("shiitttt", "is ")
-}
+// func concat(s1 string, s2 string) string {
+// 	return s1 + s2
+// }
+
+// func main() {
+// 	test("name", "is ")
+// 	test("rapper", "is ")
+// 	test("shiitttt", "is ")
+// }
 
 // func test(s1 string, s2 string) {
 // 	fmt.Println(concat(s1, s2))
@@ -97,8 +104,7 @@ func main() {
 // 	astr := strconv.Itoa(a)
 // 	bstr := strconv.Itoa(b)
 
-// 	// Concatenate
-// 	result := astr + bstr
+	// Concatenate
+	// result := astr + bstr
 
-// 	fmt.Println("Concatenated:", result) // "1234"
-// }
+	// fmt.Println("Concatenated:", result) // "1234"
