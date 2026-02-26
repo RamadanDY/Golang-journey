@@ -6,6 +6,11 @@ import (
 )
 
 // the list or arrays and also slices
+var thetask = []string{
+	"Learn Go",
+	"Build a Todo App",
+	"Practice HTTP",
+}
 
 func main(){
 	fmt.Println("##### Welcome to our todo list app")
@@ -31,7 +36,7 @@ func helloUser(writer http.ResponseWriter,handler *http.Request) {
 
 func showtasks(writer http.ResponseWriter,handler *http.Request) {
 	// var thisis = "this is what i just want to display"
-	fmt.Fprintf(writer,thetask)
+	fmt.Fprintln(writer,thetask)
 }
 
 
