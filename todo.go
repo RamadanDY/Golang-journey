@@ -1,32 +1,54 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"net/http"
+)
+
+// the list or arrays and also slices
 
 func main(){
-
-	shortGolang := "Watch our crash course"
-	fullGolang := "watch Nanas golang full course"
-	rewardDessert := "eward myself with a sheesecake"
-
 	fmt.Println("##### Welcome to our todo list app")
-	
-	thetask := []string {shortGolang,fullGolang,rewardDessert}
-	// the list or arrays and also slices
-	fmt.Println()
 
+	// lets write a handler ie a response 
+	http.HandleFunc("/",helloUser)
+	http.HandleFunc("/show-tasks",showtasks)
+
+	http.ListenAndServe(":8082",nil)	
+	
+
+}
+// lets create a func that will be use to handle the res and the req 
+// from the users info that he will send to the route that has been 
+// created and named helloUser 
+
+func helloUser(writer http.ResponseWriter,handler *http.Request) {
+	var greeting = "hello user wellcome to our todo list"
+	fmt.Fprintf(writer,greeting)
+	fmt.Println("this is my first route in gp")
+}
+
+
+func showtasks(writer http.ResponseWriter,handler *http.Request) {
+	// var thisis = "this is what i just want to display"
+	fmt.Fprintf(writer,thetask)
+}
+
+
+func PrintTask(thetask []string){
 
 	fmt.Println("these are the list of todo app")
-	fmt.Println(thetask)
 
 	// the for loop in golang to display them
 
-	for index, task := range thetask  {
-		fmt.Println(index+1,".",task)
-		fmt.Printf()
+	for index, task := range thetask {
+		fmt.Printf("format: %d\n %s\n",index,task)
 	}
+}
 
-
-
+func addingTasks(thetask []string,newTask string) ([]string) {
+	var updated = append(thetask,newTask)
+	return updated
 
 }
 
