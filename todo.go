@@ -36,6 +36,10 @@ func helloUser(writer http.ResponseWriter,handler *http.Request) {
 
 func showtasks(writer http.ResponseWriter,handler *http.Request) {
 	// var thisis = "this is what i just want to display"
+
+	for index , task := range thetask {
+		fmt.Fprintf(writer,"%d  %s\n",index+1,task)
+	}
 	fmt.Fprintln(writer,thetask)
 }
 
