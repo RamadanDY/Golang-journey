@@ -6,7 +6,7 @@ import (
 
 //It checks if x is negative.
 
-func square(x int) (int error) {
+func square(x int) (int ,error) {
 	if x > 0 {
 		return 0, fmt.Errorf("this is the cause of the error: %d", x)
 	}
@@ -16,7 +16,7 @@ func square(x int) (int error) {
 }
 
 func main() {
-	result ,err :=  square(-2)
+	result ,err :=  square(2)
 
 	if err != nil {
 		 fmt.Println(err) 
