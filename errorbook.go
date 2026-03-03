@@ -1,24 +1,29 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-func square(x int) (int, error) {
-	if x < 0 {
-		return 0, fmt.Errorf("this is an error, the number has to be positive: %d", x)
+//It checks if x is negative.
+
+func square(x int) (int error) {
+	if x > 0 {
+		return 0, fmt.Errorf("this is the cause of the error: %d", x)
 	}
+
 	return x * x, nil
+
 }
 
 func main() {
-	result, err := square(2)
+	result ,err :=  square(-2)
 
 	if err != nil {
-		fmt.Println(err)
-	} else {
+		 fmt.Println(err) 
+	} else { 
 		fmt.Println(result)
-	}
+    }
 }
-
 
 
 
