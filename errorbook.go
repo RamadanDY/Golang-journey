@@ -4,11 +4,15 @@ import (
 	"fmt"
 )
 
+var myerror = fmt.Errorf("hellpoooo  u messed up here ")
+
+
 //It checks if x is negative.
 
 func square(x int) (int ,error) {
 	if x > 0 {
-		return 0, fmt.Errorf("this is the cause of the error: %d", x)
+		//lets introduce our custom message 
+		return 0, myerror		//return 0, fmt.Errorf("x must be negative: %d", x)
 	}
 
 	return x * x, nil
